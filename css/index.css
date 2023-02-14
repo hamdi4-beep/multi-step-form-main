@@ -43,6 +43,7 @@ aside .step span {
   border: 1px solid hsl(0deg, 0%, 100%);
   border-radius: 100%;
   color: hsl(0deg, 0%, 100%);
+  text-indent: -999;
 }
 aside .step p {
   display: none;
@@ -86,7 +87,8 @@ article .btn-wrapper .cta-btn {
   border-radius: 5px;
 }
 article h1 {
-  font-size: 700;
+  font-weight: 700;
+  font-size: 1.6rem;
   color: hsl(213deg, 96%, 18%);
   margin-bottom: 0.5em;
 }
