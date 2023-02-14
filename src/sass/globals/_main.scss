@@ -1,0 +1,50 @@
+@use './variables' as *;
+
+article {
+    background-color: $clr-white;
+    margin-inline: 1em;
+    padding-inline: 1.5em;
+    padding-block: 2em 1em;
+    border-radius: 20px;
+
+    .btn-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1em;
+        width: 100%;
+        background-color: $clr-white;
+
+        .cta-btn {
+            display: block;
+            margin-left: auto;
+            background-color: $clr-marine-blue;
+            color: $clr-white;
+            border: none;
+            padding: .7em 1em;
+            border-radius: 5px;
+        }
+    }
+
+    h1 {
+        font-size: $fw-700;
+        color: $clr-marine-blue;
+        margin-bottom: .5em;
+    }
+
+    p {
+        color: $clr-cool-gray;
+        margin-bottom: 1em;
+    }
+
+    label {
+        margin-bottom: .3em;
+    }
+
+    input {
+        padding: .5em 1em;
+        border: 1px solid $clr-light-gray;
+        border-radius: 5px;
+        margin-bottom: 1em;
+    }
+}

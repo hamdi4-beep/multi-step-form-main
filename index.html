@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <main>
+    <aside>
+      <div class="bg-container">
+        <picture>
+          <source srcset="./assets/images/bg-sidebar-mobile.svg" media="(max-width: 375px)" />
+          <img src="./assets/images/bg-sidebar-desktop.svg" alt="sidebar background image">
+        </picture>
+      </div>
+
+      <nav>
+        <div class="step active">
+          <span>1</span>
+          <p>Your info</p>
+        </div>
+
+        <div class="step">
+          <span>2</span>
+          <p>Select plan</p>
+        </div>
+
+        <div class="step">
+          <span>3</span>
+          <p>Add-ons</p>
+        </div>
+
+        <div class="step">
+          <span>4</span>
+          <p>Summary</p>
+        </div>
+      </nav>
+    </aside>
+
+    <section>
+      <article>
+        <h1>Personal info</h1>
+        <p>Please provide your name, email address, and phone number.</p>
+
+        <form action="#">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="e.g. Stephen King" required />
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" required />
+          <label for="phone">Phone Number</label>
+          <input type="number" name="phone" id="phone" placeholder="e.g. +1 234 567 890" required />
+
+          <div class="btn-wrapper">
+            <button class="cta-btn">Next Step</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="hidden">
+        <h2>Select your plan</h2>
+        <p>You have the option of monthly or yearly billing.</p>
+
+        <div class="arcade-plan">
+          <div class="icon-img">
+            <img src="./assets/images/icon-arcade.svg" alt="arcade gamepad">
+          </div>
+
+          <strong>Arcade</strong>
+          <span>$9/mo</span>
+        </div>
+
+        <div class="advanced-plan">
+          <div class="icon-img">
+            <img src="./assets/images/icon-advanced.svg" alt="advanced icon">
+          </div>
+
+          <strong>Advanced</strong>
+          <span>$12/mo</span>
+        </div>
+
+        <div class="pro-plan">
+          <div class="icon-img">
+            <img src="./assets/images/icon-pro.svg" alt="pro icon">
+          </div>
+
+          <strong>Pro</strong>
+          <span>$15/mo</span>
+        </div>
+
+        <div class="toggle-container">
+          <span>Monthly</span>
+          
+          <div class="toggle">
+            <div class="dot"></div>
+          </div>
+
+          <span>Yearly</span>
+        </div>
+
+        <button>Go Back</button>
+        <button class="cta-btn">Next Step</button>
+      </article>
+
+      <article class="hidden">
+        <h2>Pick add-ons</h2>
+        <p>Add-ons help enhance gaming experience</p>
+
+        <div class="plans-container">
+          <div class="service-online plan">
+            <input type="checkbox" />
+
+            <div>
+              <strong>Online service</strong>
+              <p>Access to multiplayer games</p>
+            </div>
+
+            <span>+$1/mo</span>
+          </div>
+
+          <div class="storage plan">
+            <input type="checkbox" />
+
+            <div>
+              <strong>Larger storage</strong>
+              <p>Extra 1TB of cloud save</p>
+            </div>
+
+            <span>+$2/mo</span>
+          </div>
+
+          <div class="customize plan">
+            <input type="checkbox" />
+
+            <div>
+              <strong>Customizable Profile</strong>
+              <p>Custom theme on your profile</p>
+            </div>
+
+            <span>+$2/mo</span>
+          </div>
+        </div>
+
+        <button>Go Back</button>
+        <button class="cta-btn">Next Step</button>
+      </article>
+
+      <article class="hidden">
+        <h2>Finishing up</h2>
+        <p>Double-check everything looks OK before confirming.</p>
+
+        <button>Go Back</button>
+        <button class="cta-btn">Confirm</button>
+      </article>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Hamdi Kamel</a>.
+  </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Ubuntu;
+  min-height: 100vh;
+  background-color: hsl(229deg, 24%, 87%);
+}
+
+input, button {
+  font: inherit;
+  outline: none;
+}
+
+picture, img {
+  display: block;
+  max-width: 100%;
+}
+
+label {
+  display: block;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url(../../../assets/fonts/Ubuntu-Regular.ttf);
+}
+aside nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-block: 2em;
+}
+aside .step span {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid hsl(0deg, 0%, 100%);
+  border-radius: 100%;
+  color: hsl(0deg, 0%, 100%);
+}
+aside .step p {
+  display: none;
+}
+aside .active span {
+  background-color: white;
+  color: black;
+}
+
+.bg-container {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+article {
+  background-color: hsl(0deg, 0%, 100%);
+  margin-inline: 1em;
+  padding-inline: 1.5em;
+  padding-block: 2em 1em;
+  border-radius: 20px;
+}
+article .btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  width: 100%;
+  background-color: hsl(0deg, 0%, 100%);
+}
+article .btn-wrapper .cta-btn {
+  display: block;
+  margin-left: auto;
+  background-color: hsl(213deg, 96%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  border: none;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+}
+article h1 {
+  font-size: 700;
+  color: hsl(213deg, 96%, 18%);
+  margin-bottom: 0.5em;
+}
+article p {
+  color: hsl(231deg, 11%, 63%);
+  margin-bottom: 1em;
+}
+article label {
+  margin-bottom: 0.3em;
+}
+article input {
+  padding: 0.5em 1em;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */
