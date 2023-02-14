@@ -12,6 +12,7 @@ body {
     font-family: $ff-base;
     min-height: 100vh;
     background-color: $clr-light-gray;
+    overflow-y: hidden;
 }
 
 input, button {

@@ -10,6 +10,7 @@ body {
   font-family: Ubuntu;
   min-height: 100vh;
   background-color: hsl(229deg, 24%, 87%);
+  overflow-y: hidden;
 }
 
 input, button {
