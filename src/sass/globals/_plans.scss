@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+.plan {
+    display: flex;
+    gap: 1rem;
+    padding: 1em;
+    border: 1px solid $clr-light-gray;
+    border-radius: 5px;
+    margin-bottom: .7em;
+    color: $clr-marine-blue;
+
+    &.active {
+        border-color: $clr-marine-blue;
+    }
+
+    h4 {
+        margin-bottom: .3em;
+        color: $clr-marine-blue;
+    }
+
+    span {
+        color: $clr-cool-gray;
+    }
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3em;
+    margin-bottom: 2.3em;
+    background-color: shade($clr-cool-gray);
+    border-radius: 5px;
+
+    .toggle {
+        width: 50px;
+        padding: .3em;
+        background-color: $clr-marine-blue;
+        border-radius: 10px;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    .active {
+        font-weight: $fw-700;
+        color: $clr-marine-blue;
+    }
+}

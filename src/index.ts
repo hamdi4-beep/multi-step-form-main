@@ -5,8 +5,6 @@ const app: Application = express()
 app.set('view engine', 'ejs')
 app.use(express.static('../public'))
 
-console.log('Running')
-
 app.listen(process.env.PORT || 3000)
 
 app.get('/', (req: Request, res: Response): void => res.render('index.ejs'))

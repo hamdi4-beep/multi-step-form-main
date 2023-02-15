@@ -5,25 +5,32 @@ article {
     margin-inline: 1em;
     padding-inline: 1.5em;
     padding-block: 2em 1em;
-    border-radius: 20px;
+    border-radius: 10px;
 
-    .btn-wrapper {
+    .banner {
+        display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
-        padding: 1em;
         width: 100%;
+        padding: 1em;
         background-color: $clr-white;
+    }
 
-        .cta-btn {
-            display: block;
-            margin-left: auto;
-            background-color: $clr-marine-blue;
-            color: $clr-white;
-            border: none;
-            padding: .7em 1em;
-            border-radius: 5px;
-        }
+    .cta-btn {
+        display: block;
+        margin-left: auto;
+        background-color: $clr-marine-blue;
+        color: $clr-white;
+        border: none;
+        padding: .7em 1em;
+        border-radius: 5px;
+    }
+
+    .back-btn {
+        background: none;
+        color: $clr-cool-gray;
+        border: none;
     }
 
     h1 {

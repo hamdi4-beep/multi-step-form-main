@@ -65,17 +65,18 @@ article {
   margin-inline: 1em;
   padding-inline: 1.5em;
   padding-block: 2em 1em;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-article .btn-wrapper {
+article .banner {
+  display: flex;
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 1em;
   width: 100%;
+  padding: 1em;
   background-color: hsl(0deg, 0%, 100%);
 }
-article .btn-wrapper .cta-btn {
+article .cta-btn {
   display: block;
   margin-left: auto;
   background-color: hsl(213deg, 96%, 18%);
@@ -83,6 +84,11 @@ article .btn-wrapper .cta-btn {
   border: none;
   padding: 0.7em 1em;
   border-radius: 5px;
+}
+article .back-btn {
+  background: none;
+  color: hsl(231deg, 11%, 63%);
+  border: none;
 }
 article h1 {
   font-weight: 700;
@@ -103,6 +109,52 @@ article input {
   border-radius: 5px;
   margin-bottom: 1em;
   width: 100%;
+}
+
+.plan {
+  display: flex;
+  gap: 1rem;
+  padding: 1em;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 5px;
+  margin-bottom: 0.7em;
+  color: hsl(213deg, 96%, 18%);
+}
+.plan.active {
+  border-color: hsl(213deg, 96%, 18%);
+}
+.plan h4 {
+  margin-bottom: 0.3em;
+  color: hsl(213deg, 96%, 18%);
+}
+.plan span {
+  color: hsl(231deg, 11%, 63%);
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3em;
+  margin-bottom: 2.3em;
+  background-color: shade(hsl(231deg, 11%, 63%));
+  border-radius: 5px;
+}
+.toggle-container .toggle {
+  width: 50px;
+  padding: 0.3em;
+  background-color: hsl(213deg, 96%, 18%);
+  border-radius: 10px;
+}
+.toggle-container .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+.toggle-container .active {
+  font-weight: 700;
+  color: hsl(213deg, 96%, 18%);
 }
 
 .hidden {
