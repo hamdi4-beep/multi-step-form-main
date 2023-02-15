@@ -1,10 +1,13 @@
 import express, { Application, Request, Response } from 'express'
+import path from 'path'
 
 const app: Application = express()
 const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
-app.use(express.static('../public'))
+app.set('views', __dirname + '/views')
+
+app.use(express.static(path.join(__dirname, '/public')))
 
 app.listen(PORT)
 
