@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd src && nodemon index.ts",
-    "build": "cd src && tsc -w",
+    "build": "cd src && npx tsc -w",
     "start": "cd src && node index.js"
   },
   "repository": {
