@@ -5,7 +5,7 @@ const app: Application = express()
 const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
+app.set('views', __dirname + '../views')
 
 app.use(express.static(path.join(__dirname, '/public')))
 
