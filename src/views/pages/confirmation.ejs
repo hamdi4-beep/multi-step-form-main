@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <title>Frontend Mentor | Multi-step form</title>
+  <script src="./js/script.js" defer></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-top: 1.2em; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <aside>
+      <div class="bg-container">
+        <picture>
+          <source srcset="./assets/images/bg-sidebar-mobile.svg" media="(max-width: 768px)" />
+          <img src="./assets/images/bg-sidebar-desktop.svg" alt="sidebar background image">
+        </picture>
+      </div>
+
+      <nav>
+        <div class="step">
+          <span>1</span>
+          <p>Your info</p>
+        </div>
+
+        <div class="step">
+          <span>2</span>
+          <p>Select plan</p>
+        </div>
+
+        <div class="step">
+          <span>3</span>
+          <p>Add-ons</p>
+        </div>
+
+        <div class="step active">
+          <span>4</span>
+          <p>Summary</p>
+        </div>
+      </nav>
+    </aside>
+
+    <section>
+      <article>
+        <h2>Finishing up</h2>
+        <p>Double-check everything looks OK before confirming.</p>
+
+        <form action="/">
+          <button type="button">Go Back</button>
+          <button class="cta-btn">Confirm</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Hamdi Kamel</a>.
+  </div>
+</body>
+</html>
