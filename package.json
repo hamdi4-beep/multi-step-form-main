@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd src && nodemon index.ts",
     "build": "tsc",
-    "start": "node ./index.js"
+    "start": "cd dist && node index.js"
   },
   "repository": {
     "type": "git",
