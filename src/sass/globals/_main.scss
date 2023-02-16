@@ -5,7 +5,15 @@ article {
     margin-inline: 1em;
     padding-inline: 1.5em;
     padding-block: 2em 1em;
-    border-radius: 10px;
+    border-radius: 5px;
+
+    .field {
+        padding: .5em 1em;
+        border: 1px solid $clr-light-gray;
+        border-radius: 5px;
+        margin-bottom: 1em;
+        width: 100%;
+    }
 
     .banner {
         display: flex;
@@ -47,13 +55,5 @@ article {
 
     label {
         margin-bottom: .3em;
-    }
-
-    input {
-        padding: .5em 1em;
-        border: 1px solid $clr-light-gray;
-        border-radius: 5px;
-        margin-bottom: 1em;
-        width: 100%;
     }
 }

@@ -67,6 +67,13 @@ article {
   padding-block: 2em 1em;
   border-radius: 5px;
 }
+article .field {
+  padding: 0.5em 1em;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  width: 100%;
+}
 article .banner {
   display: flex;
   position: fixed;
@@ -102,13 +109,6 @@ article p {
 }
 article label {
   margin-bottom: 0.3em;
-}
-article input {
-  padding: 0.5em 1em;
-  border: 1px solid hsl(229deg, 24%, 87%);
-  border-radius: 5px;
-  margin-bottom: 1em;
-  width: 100%;
 }
 
 article {

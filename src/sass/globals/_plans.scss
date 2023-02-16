@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+article {
+    margin-bottom: 4em;
+}
+
 .plan {
     display: flex;
     gap: 1rem;
@@ -27,8 +31,8 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 3em;
-    margin-bottom: 2.3em;
+    margin-top: 2.3em;
+    margin-bottom: 1.2em;
     background-color: shade($clr-cool-gray);
     border-radius: 5px;
 
@@ -42,7 +46,7 @@
     .dot {
         width: 15px;
         height: 15px;
-        border-radius: 50%;
+        border-radius: 100%;
         background-color: white;
     }
 
