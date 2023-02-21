@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/index.css">
 
   <title>Frontend Mentor | Multi-step form</title>
-  <script src="./js/script.js" defer></script>
+  <script src="./js/addons.js" defer></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -58,7 +58,7 @@
           <div class="service-online plan">
             <input type="checkbox" class="checkbox" />
 
-            <div>
+            <div class="info">
               <strong>Online service</strong>
               <p>Access to multiplayer games</p>
             </div>
@@ -69,7 +69,7 @@
           <div class="storage plan">
             <input type="checkbox" />
 
-            <div>
+            <div class="info">
               <strong>Larger storage</strong>
               <p>Extra 1TB of cloud save</p>
             </div>
@@ -80,7 +80,7 @@
           <div class="customize plan">
             <input type="checkbox" />
 
-            <div>
+            <div class="info">
               <strong>Customizable Profile</strong>
               <p>Custom theme on your profile</p>
             </div>
@@ -91,7 +91,7 @@
 
         <form action="/confirmation">
           <div class="banner">
-            <button type="button" class="back-btn">Go Back</button>
+            <button type="button" class="back-btn" onclick="location.href='/plans'">Go Back</button>
             <button class="cta-btn">Next Step</button>
           </div>
         </form>

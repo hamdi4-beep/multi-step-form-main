@@ -1,1 +1,18 @@
 @use './variables' as *;
+
+.plan {
+    align-items: center;
+
+    input[type="checkbox"] {
+        margin-inline: .5em;
+    }
+
+    p {
+        margin: 0;
+        margin-top: .3em;
+    }
+
+    .info {
+        margin-right: auto;
+    }
+}

@@ -25,6 +25,15 @@ article {
     span {
         color: $clr-cool-gray;
     }
+
+    .price {
+        display: block;
+        margin-bottom: .5em;
+    }
+
+    .yearly {
+        color: $clr-marine-blue;
+    }
 }
 
 .toggle-container {
@@ -48,10 +57,16 @@ article {
         height: 15px;
         border-radius: 100%;
         background-color: white;
+        margin-left: 0%;
+        transition: all 300ms ease;
     }
 
     .active {
         font-weight: $fw-700;
         color: $clr-marine-blue;
+    }
+
+    .toggled {
+        margin-left: calc(50px - 20px - .3em);
     }
 }
