@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #eee;
+}
+
+.left {
+    background-image: url('../../assets/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: 100% bottom;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.active {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+@layer base {
+    .step {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-bottom: 2em;
+    }
+
+    .field {
+        @apply border p-2 px-4 rounded-md block my-2 mb-4 w-full;
+    }
+}
