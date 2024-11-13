@@ -5,17 +5,25 @@ const FormComponent = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        navigate('/select-plan')
+        const [[, name], [, email], [, phone]] = new FormData(e.target as HTMLFormElement)
+
+        navigate('/select-plan', {
+            state: {
+                name,
+                email,
+                phone
+            }
+        })
     }
 
     return (
         <form onSubmit={handleSubmit} className="mt-8">
             <label htmlFor="name" className="font-light">Name</label>
-            <input type="text" placeholder="e.g. Stephen King" className="field"  />
+            <input type="text" name="name" placeholder="e.g. Stephen King" className="field" required />
             <label htmlFor="email" className="font-light">Email Address</label>
-            <input type="email" placeholder="e.g. stephenking@lorem.com" className="field"  />
+            <input type="email" name="email" placeholder="e.g. stephenking@lorem.com" className="field" required />
             <label htmlFor="phone" className="font-light">Phone Number</label>
-            <input type="text" placeholder="e.g. +1 234 567 890" className="field"  />
+            <input type="text" name="phone" placeholder="e.g. +1 234 567 890" className="field" required />
             <button className="primary-btn mt-32 block ml-auto">Next Step</button>
         </form>
     )

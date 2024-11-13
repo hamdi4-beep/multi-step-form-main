@@ -1,20 +1,27 @@
 import { Link } from "react-router-dom"
 
-const list = [
-    {
+const list = [{
         title: 'Arcade',
         src: '/assets/icon-arcade.svg',
-        price: '$9/mo'
+        price: {
+            mo: '$9/mo',
+            yr: '$90/yr'
+        }
     }, {
         title: 'Advanced',
         src: '/assets/icon-advanced.svg',
-        price: '$12/mo'
+        price: {
+            mo: '$12/mo',
+            yr: '$120/yr'
+        }
     }, {
         title: 'Pro',
         src: '/assets/icon-pro.svg',
-        price: '$15/mo'
-    }
-]
+        price: {
+            mo: '$15/mo',
+            yr: '$150/yr'
+        }
+    }]
 
 function PlanComponent() {
     return (
@@ -27,7 +34,7 @@ function PlanComponent() {
                     <div className="w-full mt-8 p-4 pr-16 border rounded-md" key={i}>
                         <img src={item.src} className='mb-10' alt="" />
                         <h3 className="font-bold text-primary-marine-blue">{item.title}</h3>
-                        <p className="text-neutral-cool-gray">{item.price}</p>
+                        <p className="text-neutral-cool-gray">{item.price['mo']}</p>
                     </div>
                 ))}
             </div>
