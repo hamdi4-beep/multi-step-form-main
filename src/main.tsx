@@ -1,35 +1,26 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom'
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 
 import App from './App.tsx'
-import FormComponent from './components/FormComponent.tsx'
+import InfoComponent from './components/InfoComponent.tsx'
+import PlanComponent from './components/PlanComponent.tsx'
+import AddOnsComponent from './components/AddOnsComponent.tsx'
+import Summary from './components/SummaryComponent.tsx'
 import './css/output.css'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    errorElement: <div>No such route was found!</div>,
-    children: [
-      {
-        path: '/',
-        element: <FormComponent />
-      },
-      {
-        path: '/step-2',
-        element: <div>Second Step!</div>
-      }
-    ]
-  }
-])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+    <Router>
+      <Routes>
+        <Route path='/' element={<App />}>
+          <Route index element={<InfoComponent />} />
+          <Route path='/select-plan' element={<PlanComponent />} />
+          <Route path='/add-ons' element={<AddOnsComponent />} />
+          <Route path='/summary' element={<Summary />} />
+        </Route>
+      </Routes>
+    </Router>
+  </StrictMode>
 )

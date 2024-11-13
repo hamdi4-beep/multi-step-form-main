@@ -17,6 +17,9 @@ importers:
       react-router-dom:
         specifier: ^6.28.0
         version: 6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      yarn:
+        specifier: ^1.22.22
+        version: 1.22.22
     devDependencies:
       '@eslint/js':
         specifier: ^9.13.0
@@ -1336,6 +1339,11 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
+  yarn@1.22.22:
+    resolution: {integrity: sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==}
+    engines: {node: '>=4.0.0'}
+    hasBin: true
+
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
@@ -2551,5 +2559,7 @@ snapshots:
   yallist@3.1.1: {}
 
   yaml@2.6.0: {}
+
+  yarn@1.22.22: {}
 
   yocto-queue@0.1.0: {}

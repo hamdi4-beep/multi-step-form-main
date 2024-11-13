@@ -32,4 +32,12 @@ body {
     .field {
         @apply border p-2 px-4 rounded-md block my-2 mb-4 w-full;
     }
+
+    .primary-btn {
+        @apply bg-primary-marine-blue p-2 px-5 text-white rounded-md;
+    }
+
+    .content {
+        @apply px-16 pt-8 w-full;
+    }
 }
