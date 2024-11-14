@@ -11,7 +11,7 @@ function AsideComponent({
     currentIndex: number
 }) {
     return (
-        <div className="left p-6 pr-16 flex-shrink-0">
+        <div className="left p-6 pr-32 flex-shrink-0">
           {list.map((title, i) => {
             const index = list.indexOf(title) + 1
 

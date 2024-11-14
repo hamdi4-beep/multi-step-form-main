@@ -591,6 +591,13 @@ video {
   padding-top: 2rem;
 }
 
+.selected-plan {
+  --tw-border-opacity: 1;
+  border-color: hsl(243 100% 62% / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -643,8 +650,8 @@ video {
   height: 100vh;
 }
 
-.w-16 {
-  width: 4rem;
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-\[1024px\] {
@@ -754,12 +761,16 @@ video {
   padding-bottom: 1rem;
 }
 
+.pr-0 {
+  padding-right: 0px;
+}
+
 .pr-16 {
   padding-right: 4rem;
 }
 
-.pr-0 {
-  padding-right: 0px;
+.pr-32 {
+  padding-right: 8rem;
 }
 
 .font-\[\'Ubuntu\'\] {
@@ -837,6 +848,32 @@ body {
   border: none;
 }
 
+.toggled::after {
+  margin-left: auto;
+}
+
+.hover\:selected-plan:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(243 100% 62% / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
+}
+
+.after\:block::after {
+  content: var(--tw-content);
+  display: block;
+}
+
+.after\:h-5::after {
+  content: var(--tw-content);
+  height: 1.25rem;
+}
+
+.after\:w-4::after {
+  content: var(--tw-content);
+  width: 1rem;
+}
+
 .after\:rounded-full::after {
   content: var(--tw-content);
   border-radius: 9999px;
@@ -848,13 +885,24 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.after\:p-\[\.25em\]::after {
+.after\:px-\[\.6em\]::after {
   content: var(--tw-content);
-  padding: .25em;
+  padding-left: .6em;
+  padding-right: .6em;
 }
 
-.after\:px-\[\.8em\]::after {
+.after\:py-\[\.04em\]::after {
   content: var(--tw-content);
-  padding-left: .8em;
-  padding-right: .8em;
+  padding-top: .04em;
+  padding-bottom: .04em;
+}
+
+.hover\:border-primary-purplish-blue:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(243 100% 62% / var(--tw-border-opacity));
+}
+
+.hover\:bg-neutral-magnolia:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
 }

@@ -21,6 +21,10 @@ body {
     border: none;
 }
 
+.toggled::after {
+    margin-left: auto;
+}
+
 @layer base {
     .step {
         display: flex;
@@ -39,5 +43,9 @@ body {
 
     .content {
         @apply px-16 pt-8 w-full;
+    }
+
+    .selected-plan {
+        @apply border-primary-purplish-blue bg-neutral-magnolia;
     }
 }
