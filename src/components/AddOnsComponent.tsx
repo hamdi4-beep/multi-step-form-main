@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
-const list = [{
+export const list = [{
     header: 'Online service',
     subheader: 'Access to multiplayer games',
     price: {
@@ -36,6 +36,16 @@ function AddOnsComponent() {
 
     const handleClick = (addon: string) => setSelectedAddOns(!selectedAddOns.find(it => it === addon) ? [...selectedAddOns, addon] : selectedAddOns.filter(it => it !== addon))
 
+    const filteredList = list.map(item => {
+        const [filteredAddOn] = selectedAddOns.filter(addon => item.header === addon)
+        if (filteredAddOn) return item
+    }).filter(Boolean)
+
+    console.log({
+        prev: {...location.state},
+        filteredList
+    })
+
     return (
         <div className="content">
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Pick add-ons</h2>
@@ -66,7 +76,10 @@ function AddOnsComponent() {
                 </button>
 
                 <button className="primary-btn">
-                    <Link to='/summary'>Next Step</Link>
+                    <Link to='/summary' state={{
+                        prev: {...location.state},
+                        filteredList
+                    }}>Next Step</Link>
                 </button>
             </div>
         </div>
