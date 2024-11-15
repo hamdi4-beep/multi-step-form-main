@@ -35,7 +35,7 @@ function PlanComponent() {
     const [toggleValue, setToggleValue] = React.useState('mo')
     const location = useLocation()
 
-    const togglerStyle = `${toggleValue !== 'mo' ? 'toggled' : ''} after:block after:bg-white after:rounded-full after:py-[.04em] after:px-[.6em] after:w-4 after:h-5 bg-primary-marine-blue p-1 rounded-full w-14`
+    const togglerStyle = `${toggleValue === 'yr' ? 'toggled' : ''} after:block after:bg-white after:rounded-full after:py-[.04em] after:px-[.6em] after:w-4 after:h-5 bg-primary-marine-blue p-1 rounded-full w-14`
 
     console.log(location)
 

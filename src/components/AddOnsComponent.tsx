@@ -31,10 +31,10 @@ const list = [{
 }[]
 
 function AddOnsComponent() {
-    const [selectedAddOn, setSelectedAddOn] = React.useState('')
+    const [selectedAddOns, setSelectedAddOns] = React.useState([''])
     const location = useLocation()
 
-    console.log(location)
+    const handleClick = (addon: string) => setSelectedAddOns(!selectedAddOns.find(it => it === addon) ? [...selectedAddOns, addon] : selectedAddOns.filter(it => it !== addon))
 
     return (
         <div className="content">
@@ -43,9 +43,11 @@ function AddOnsComponent() {
 
             <div className="mt-8">
                 {list.map((item, i) => {
+                    const toggledAddon = selectedAddOns.find(it => it === item.header)
+                    
                     return (
-                        <div onClick={() => setSelectedAddOn(item.header)} className={`${selectedAddOn === item.header ? 'selected-plan' : ''} hover:selected-plan border rounded-md flex items-center gap-4 p-4 mt-4`} key={i}>
-                            <input type="checkbox" />
+                        <div onClick={() => handleClick(item.header)} className={`${toggledAddon ? 'selected-plan' : ''} hover:selected-plan border rounded-md flex items-center gap-4 p-4 mt-4`} key={i}>
+                            <input type="checkbox" checked={!!toggledAddon} onChange={() => {}} />
 
                             <div className="mr-32">
                                 <h3 className="text-primary-marine-blue font-bold">{item.header}</h3>
@@ -60,7 +62,7 @@ function AddOnsComponent() {
 
             <div className="flex justify-between items-center mt-32">
                 <button className="text-neutral-cool-gray">
-                    <Link to='/select-plan'>Go Back</Link>
+                    <Link to='/select-plan' state={location.state}>Go Back</Link>
                 </button>
 
                 <button className="primary-btn">
