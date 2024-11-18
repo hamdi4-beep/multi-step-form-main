@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom"
-import { list } from "./AddOnsComponent"
+import { addons } from "./AddOnsComponent"
 
 function Summary() {
     const location = useLocation()
-    const {prev, filteredList} = location.state
+    const {prev, filteredAddOns} = location.state
 
-    const selectedAddOns = filteredList as typeof list
+    const selectedAddOns = filteredAddOns as typeof addons
+    const selectedPlan = prev['plan']
 
     return (
         <div className="content">
@@ -15,16 +16,16 @@ function Summary() {
             <div className="bg-[#eee] p-4 rounded-md mt-8">
                 <div className="flex justify-between items-center border-b border-white mb-4 pb-4">
                     <div>
-                        <h3 className="font-bold text-primary-marine-blue">{prev['plan'] ?? 'Arcade'} (Monthly)</h3>
+                        <h3 className="font-bold text-primary-marine-blue">{selectedPlan.title} ({prev.subscription === 'mo' ? 'Monthly' : 'Yearly'})</h3>
                         <span className="text-sm underline text-neutral-cool-gray">Change</span>
                     </div>
 
-                    <span className="font-bold text-primary-marine-blue">$9/mo</span>
+                    <span className="font-bold text-primary-marine-blue">{selectedPlan.price[prev.subscription]}</span>
                 </div>
 
                 {selectedAddOns.map((addon, i) => (
                     <div className="flex justify-between pb-4 text-neutral-cool-gray" key={i}>
-                        <p>{addon.header}</p>
+                        <p>{addon.title}</p>
                         <span className="text-black">+{addon.price[prev.subscription ?? 'mo']}</span>
                     </div>
                 ))}
@@ -37,7 +38,7 @@ function Summary() {
 
             <div className="flex justify-between items-center mt-32">
                 <button className="text-neutral-cool-gray">
-                    <Link to='/add-ons'>Go Back</Link>
+                    <Link to='/add-ons' state={location.state}>Go Back</Link>
                 </button>
 
                 <button className="primary-btn">

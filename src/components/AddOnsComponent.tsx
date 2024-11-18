@@ -1,30 +1,30 @@
 import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
-export const list = [{
-    header: 'Online service',
-    subheader: 'Access to multiplayer games',
+export const addons = [{
+    title: 'Online service',
+    description: 'Access to multiplayer games',
     price: {
         mo: '$1/mo',
         yr: '$10/yr'
     }
 }, {
-    header: 'Larger storage',
-    subheader: 'Extra 1TB of cloud save',
+    title: 'Larger storage',
+    description: 'Extra 1TB of cloud save',
     price: {
         mo: '$2/mo',
         yr: '$20/yr'
     }
 }, {
-    header: 'Customizable profile',
-    subheader: 'Custom theme on your profile',
+    title: 'Customizable profile',
+    description: 'Custom theme on your profile',
     price: {
         mo: '$2/mo',
         yr: '$20/yr'
     }
 }] as {
-    header: string
-    subheader: string
+    title: string
+    description: string
     price: {
         [key: string]: string
     }
@@ -34,17 +34,12 @@ function AddOnsComponent() {
     const [selectedAddOns, setSelectedAddOns] = React.useState([''])
     const location = useLocation()
 
-    const handleClick = (addon: string) => setSelectedAddOns(!selectedAddOns.find(it => it === addon) ? [...selectedAddOns, addon] : selectedAddOns.filter(it => it !== addon))
+    const selectAddOn = (addonTitle: string) => setSelectedAddOns(!filteredAddOns.find(it => it?.title === addonTitle) ? [...selectedAddOns, addonTitle] : selectedAddOns.filter(addon => addon !== addonTitle))
 
-    const filteredList = list.map(item => {
-        const [filteredAddOn] = selectedAddOns.filter(addon => item.header === addon)
-        if (filteredAddOn) return item
+    const filteredAddOns = addons.map(addon => {
+        const [filteredAddOn] = selectedAddOns.filter(selectedAddon => addon.title === selectedAddon)
+        if (filteredAddOn) return addon
     }).filter(Boolean)
-
-    console.log({
-        prev: {...location.state},
-        filteredList
-    })
 
     return (
         <div className="content">
@@ -52,19 +47,19 @@ function AddOnsComponent() {
             <p className="text-neutral-cool-gray">Add-ons enhance your gaming experience.</p>
 
             <div className="mt-8">
-                {list.map((item, i) => {
-                    const toggledAddon = selectedAddOns.find(it => it === item.header)
+                {addons.map((addon, i) => {
+                    const toggledAddon = filteredAddOns.find(it => it === addon)
                     
                     return (
-                        <div onClick={() => handleClick(item.header)} className={`${toggledAddon ? 'selected-plan' : ''} hover:selected-plan border rounded-md flex items-center gap-4 p-4 mt-4`} key={i}>
+                        <div onClick={() => selectAddOn(addon.title)} className={`${toggledAddon ? 'selected-plan' : ''} hover:selected-plan border rounded-md flex items-center gap-4 p-4 mt-4`} key={i}>
                             <input type="checkbox" checked={!!toggledAddon} onChange={() => {}} />
 
                             <div className="mr-32">
-                                <h3 className="text-primary-marine-blue font-bold">{item.header}</h3>
-                                <p className="text-neutral-cool-gray">{item.subheader}</p>
+                                <h3 className="text-primary-marine-blue font-bold">{addon.title}</h3>
+                                <p className="text-neutral-cool-gray">{addon.description}</p>
                             </div>
 
-                            <span className="ml-auto text-primary-marine-blue">+{item.price[location.state?.subscription ?? 'mo']}</span>
+                            <span className="ml-auto text-primary-marine-blue">+{addon.price[location.state?.subscription ?? 'mo']}</span>
                         </div>
                     )
                 })}
@@ -78,7 +73,7 @@ function AddOnsComponent() {
                 <button className="primary-btn">
                     <Link to='/summary' state={{
                         prev: {...location.state},
-                        filteredList
+                        filteredAddOns
                     }}>Next Step</Link>
                 </button>
             </div>

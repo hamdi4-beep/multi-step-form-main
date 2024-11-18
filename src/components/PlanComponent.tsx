@@ -70,9 +70,9 @@ function PlanComponent() {
                 </button>
 
                 <button className="primary-btn">
-                    <Link to={currentPlan === '' ? '#' : '/add-ons'} onClick={() => currentPlan === '' ? alert('Pick a plan!') : null} state={{
+                    <Link to={currentPlan === '' ? '#' : '/add-ons'} onClick={() => currentPlan === '' ? alert('Please select a plan!') : null} state={{
                         ...location.state,
-                        plan: currentPlan,
+                        plan: plans.find(it => it.title === currentPlan),
                         subscription
                     }}>Next Step</Link>
                 </button>
