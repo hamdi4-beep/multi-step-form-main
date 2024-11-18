@@ -1,4 +1,4 @@
-import AsideComponent from "./components/AsideBar"
+import AsideBar from "./components/AsideBar"
 import { Outlet, useLocation } from "react-router-dom"
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App font-['Ubuntu'] grid place-content-center h-screen">
       <div className="bg-white w-[1024px] p-4 pr-0 flex rounded-lg">
-        <AsideComponent currentIndex={paths[location.pathname]} />
+        <AsideBar currentIndex={paths[location.pathname]} />
         <Outlet />
       </div>
     </div>

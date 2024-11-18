@@ -1,3 +1,5 @@
+// The AddOns Information
+
 export const addons = [{
     title: 'Online service',
     description: 'Access to multiplayer games',
@@ -26,6 +28,8 @@ export const addons = [{
         [key: string]: number
     }
 }[]
+
+// The Plans Information
 
 export const plans = [{
     title: 'Arcade',
