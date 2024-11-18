@@ -14,6 +14,8 @@ function AddOnsComponent() {
         if (filteredAddOn) return addon
     }).filter(Boolean)
 
+    const subscription = location.state['subscription'] ?? 'mo'
+
     return (
         <div className="content">
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Pick add-ons</h2>
@@ -32,7 +34,7 @@ function AddOnsComponent() {
                                 <p className="text-neutral-cool-gray">{addon.description}</p>
                             </div>
 
-                            <span className="ml-auto text-primary-marine-blue">+{addon.price[location.state?.subscription ?? 'mo']}</span>
+                            <span className="ml-auto text-primary-marine-blue">+${addon.price[subscription] + subscription}</span>
                         </div>
                     )
                 })}
@@ -44,8 +46,8 @@ function AddOnsComponent() {
                 </button>
 
                 <button className="primary-btn">
-                    <Link to='/summary' state={{
-                        prev: {...location.state},
+                    <Link to={filteredAddOns.length ? '/summary' : '#'} onClick={() => filteredAddOns.length === 0 ? alert('Please pick an add-on!') : null} state={{
+                        ...location.state,
                         filteredAddOns
                     }}>Next Step</Link>
                 </button>
