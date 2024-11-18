@@ -1,43 +1,45 @@
 import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
-const list = [{
-        title: 'Arcade',
-        src: '/assets/icon-arcade.svg',
-        price: {
-            mo: '$9/mo',
-            yr: '$90/yr'
-        }
-    }, {
-        title: 'Advanced',
-        src: '/assets/icon-advanced.svg',
-        price: {
-            mo: '$12/mo',
-            yr: '$120/yr'
-        }
-    }, {
-        title: 'Pro',
-        src: '/assets/icon-pro.svg',
-        price: {
-            mo: '$15/mo',
-            yr: '$150/yr'
-        }
-    }] as {
-        title: string
-        src: string
-        price: {
-            [key: string]: string
-        }
-    }[]
+const plans = [{
+    title: 'Arcade',
+    src: '/assets/icon-arcade.svg',
+    price: {
+        mo: '$9/mo',
+        yr: '$90/yr'
+    }
+}, {
+    title: 'Advanced',
+    src: '/assets/icon-advanced.svg',
+    price: {
+        mo: '$12/mo',
+        yr: '$120/yr'
+    }
+}, {
+    title: 'Pro',
+    src: '/assets/icon-pro.svg',
+    price: {
+        mo: '$15/mo',
+        yr: '$150/yr'
+    }
+}] as {
+    title: string
+    src: string
+    price: {
+        [key: string]: string
+    }
+}[]
 
 function PlanComponent() {
     const [currentPlan, setCurrentPlan] = React.useState('')
     const [toggleValue, setToggleValue] = React.useState('mo')
     const location = useLocation()
 
-    const togglerStyle = `${toggleValue === 'yr' ? 'toggled' : ''} after:block after:bg-white after:rounded-full after:py-[.04em] after:px-[.6em] after:w-4 after:h-5 bg-primary-marine-blue p-1 rounded-full w-14`
-
-    console.log(location)
+    const togglerStyle = `
+        ${toggleValue === 'yr' ? 'toggled' : ''}
+        after:block after:bg-white after:rounded-full after:py-[.04em] after:px-[.6em] after:w-4 after:h-5
+        bg-primary-marine-blue p-1 rounded-full w-14
+    `
 
     return (
         <div className="content">
@@ -45,12 +47,12 @@ function PlanComponent() {
             <p className="text-neutral-cool-gray">You have the option of monthly or yearly billing.</p>
 
             <div className="flex gap-4">
-                {list.map((item, i) => {
+                {plans.map((plan, i) => {
                     return (
-                        <div onClick={() => setCurrentPlan(item.title)} className={`${currentPlan === item.title ? 'selected-plan' : ''} w-full mt-8 p-4 pr-16 border rounded-md hover:selected-plan`} key={i}>
-                            <img src={item.src} className='mb-10' alt="" />
-                            <h3 className="font-bold text-primary-marine-blue">{item.title}</h3>
-                            <p className="text-neutral-cool-gray">{item.price[toggleValue]}</p>
+                        <div onClick={() => setCurrentPlan(plan.title)} className={`${currentPlan === plan.title ? 'selected-plan' : ''} w-full mt-8 p-4 pr-16 border rounded-md hover:selected-plan`} key={i}>
+                            <img src={plan.src} className='mb-10' alt="" />
+                            <h3 className="font-bold text-primary-marine-blue">{plan.title}</h3>
+                            <p className="text-neutral-cool-gray">{plan.price[toggleValue]}</p>
                         </div>
                     )
                 })}
