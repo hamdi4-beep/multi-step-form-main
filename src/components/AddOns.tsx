@@ -3,16 +3,16 @@ import { Link, useLocation } from "react-router-dom"
 
 import { addons } from '../data'
 
-function AddOnsComponent() {
-    const [selectedAddOns, setSelectedAddOns] = React.useState([''])
+function AddOns() {
+    const [selectedAddOns, setSelectedAddOns] = React.useState<string[]>([])
     const location = useLocation()
 
-    const selectAddOn = (addonTitle: string) => setSelectedAddOns(!filteredAddOns.find(it => it?.title === addonTitle) ? [...selectedAddOns, addonTitle] : selectedAddOns.filter(addon => addon !== addonTitle))
+    const selectAddOn = (addonTitle: string) => setSelectedAddOns(!filteredAddOns.find(it => it?.title === addonTitle) ? [...selectedAddOns, addonTitle] : selectedAddOns.filter(it => it !== addonTitle))
 
     const filteredAddOns = addons.map(addon => {
-        const [filteredAddOn] = selectedAddOns.filter(selectedAddon => addon.title === selectedAddon)
+        const [filteredAddOn] = selectedAddOns.filter(it => addon.title === it)
         if (filteredAddOn) return addon
-    }).filter(Boolean)
+    })
 
     const subscription = location.state['subscription'] ?? 'mo'
 
@@ -56,4 +56,4 @@ function AddOnsComponent() {
     )
 }
 
-export default AddOnsComponent
+export default AddOns

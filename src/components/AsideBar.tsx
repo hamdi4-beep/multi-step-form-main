@@ -5,7 +5,7 @@ const list = [
     'Summary'
 ]
 
-function AsideComponent({
+function AsideBar({
     currentIndex
 }: {
     currentIndex: number
@@ -29,4 +29,4 @@ function AsideComponent({
     )
 }
 
-export default AsideComponent
+export default AsideBar

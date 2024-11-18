@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 
 import { plans } from '../data'
 
-function PlanComponent() {
+function SelectPlan() {
     const [currentPlan, setCurrentPlan] = React.useState('')
     const [subscription, setSubscription] = React.useState('mo')
     const location = useLocation()
@@ -54,4 +54,4 @@ function PlanComponent() {
     )
 }
 
-export default PlanComponent
+export default SelectPlan

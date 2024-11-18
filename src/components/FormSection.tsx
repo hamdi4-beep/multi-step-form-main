@@ -29,7 +29,7 @@ const FormComponent = () => {
     )
 }
 
-function InfoComponent() {
+function FormSection() {
     return (
         <section className="content">
           <h2 className="text-primary-marine-blue font-bold text-3xl">Personal info</h2>
@@ -39,4 +39,4 @@ function InfoComponent() {
     )
 }
 
-export default InfoComponent
+export default FormSection

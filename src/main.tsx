@@ -4,10 +4,10 @@ import { createRoot } from 'react-dom/client'
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 
 import App from './App.tsx'
-import InfoComponent from './components/InfoComponent.tsx'
-import PlanComponent from './components/PlanComponent.tsx'
-import AddOnsComponent from './components/AddOnsComponent.tsx'
-import Summary from './components/SummaryComponent.tsx'
+import InfoComponent from './components/FormSection.tsx'
+import PlanComponent from './components/SelectPlan.tsx'
+import AddOnsComponent from './components/AddOns.tsx'
+import Summary from './components/Summary.tsx'
 import './css/output.css'
 
 createRoot(document.getElementById('root')!).render(

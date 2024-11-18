@@ -1,4 +1,4 @@
-import AsideComponent from "./components/AsideComponent"
+import AsideComponent from "./components/AsideBar"
 import { Outlet, useLocation } from "react-router-dom"
 
 function App() {
