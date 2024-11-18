@@ -1,34 +1,7 @@
 import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
-export const addons = [{
-    title: 'Online service',
-    description: 'Access to multiplayer games',
-    price: {
-        mo: '$1/mo',
-        yr: '$10/yr'
-    }
-}, {
-    title: 'Larger storage',
-    description: 'Extra 1TB of cloud save',
-    price: {
-        mo: '$2/mo',
-        yr: '$20/yr'
-    }
-}, {
-    title: 'Customizable profile',
-    description: 'Custom theme on your profile',
-    price: {
-        mo: '$2/mo',
-        yr: '$20/yr'
-    }
-}] as {
-    title: string
-    description: string
-    price: {
-        [key: string]: string
-    }
-}[]
+import { addons } from '../data'
 
 function AddOnsComponent() {
     const [selectedAddOns, setSelectedAddOns] = React.useState([''])

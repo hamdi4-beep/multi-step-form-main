@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { addons } from "./AddOnsComponent"
+import { addons } from "../data"
 
 function Summary() {
     const location = useLocation()
