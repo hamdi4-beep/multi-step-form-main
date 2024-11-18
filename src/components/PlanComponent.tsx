@@ -25,7 +25,7 @@ function PlanComponent() {
                         <div onClick={() => setCurrentPlan(plan.title)} className={`${currentPlan === plan.title ? 'selected-plan' : ''} w-full mt-8 p-4 pr-16 border rounded-md hover:selected-plan`} key={i}>
                             <img src={plan.src} className='mb-10' alt="" />
                             <h3 className="font-bold text-primary-marine-blue">{plan.title}</h3>
-                            <p className="text-neutral-cool-gray">{plan.price[subscription]}</p>
+                            <p className="text-neutral-cool-gray">${plan.price[subscription]}/{subscription}</p>
                         </div>
                     )
                 })}

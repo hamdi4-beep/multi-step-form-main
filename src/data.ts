@@ -31,27 +31,27 @@ export const plans = [{
     title: 'Arcade',
     src: '/assets/icon-arcade.svg',
     price: {
-        mo: '$9/mo',
-        yr: '$90/yr'
+        mo: 9,
+        yr: 90
     }
 }, {
     title: 'Advanced',
     src: '/assets/icon-advanced.svg',
     price: {
-        mo: '$12/mo',
-        yr: '$120/yr'
+        mo: 12,
+        yr: 120
     }
 }, {
     title: 'Pro',
     src: '/assets/icon-pro.svg',
     price: {
-        mo: '$15/mo',
-        yr: '$150/yr'
+        mo: 15,
+        yr: 150
     }
 }] as {
     title: string
     src: string
     price: {
-        [key: string]: string
+        [key: string]: number
     }
 }[]
