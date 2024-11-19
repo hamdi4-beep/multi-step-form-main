@@ -18,16 +18,12 @@ function Summary() {
 
     if (!location.state) return (
         <div className="content">
-            <h1>You aren't supposed to be here!</h1>
+            <h1>Please follow the steps! No peaking ahead ;)</h1>
             <Link to='/'>Go Home</Link>
         </div>
     )
 
-    if (isConfirmed) return (
-        <div className="content grid place-content-center">
-            <Success />
-        </div>
-    )
+    if (isConfirmed) return <Success />
 
     const {subscription, filteredAddOns} = location.state
 

@@ -18,10 +18,7 @@ createRoot(document.getElementById('root')!).render(
           <Route index element={<InfoComponent />} />
           <Route path='/select-plan' element={<PlanComponent />} />
           <Route path='/add-ons' element={<AddOnsComponent />} />
-          <Route path='/summary' element={<Summary />} loader={() => {
-            console.log('Loaded before rendering!')
-            return null
-          }} />
+          <Route path='/summary' element={<Summary />} />
         </Route>
       </Routes>
     </Router>

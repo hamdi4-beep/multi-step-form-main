@@ -2,7 +2,7 @@
 
 function Success() {
     return (
-        <div className="text-center mb-32 mt-16">
+        <div className="content grid place-content-center text-center mb-32 mt-16">
             <div className="icon-wrapper mb-8">
                 <img src="/assets/icon-thank-you.svg" className="block mx-auto" alt="" />
             </div>
