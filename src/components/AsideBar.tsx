@@ -11,7 +11,7 @@ function AsideBar({
     currentIndex: number
 }) {
     return (
-        <div className="left p-6 pr-32 flex-shrink-0">
+        <div className="left p-6 pr-32 flex-shrink-0 h-[590px]">
           {list.map((title, i) => {
             const index = list.indexOf(title) + 1
 

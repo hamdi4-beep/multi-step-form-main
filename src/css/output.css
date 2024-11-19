@@ -598,6 +598,11 @@ video {
   background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -634,6 +639,22 @@ video {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -648,6 +669,38 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[1024px\] {
+  height: 1024px;
+}
+
+.h-\[768px\] {
+  height: 768px;
+}
+
+.h-\[425px\] {
+  height: 425px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-\[550px\] {
+  height: 550px;
+}
+
+.h-\[580px\] {
+  height: 580px;
+}
+
+.h-\[590px\] {
+  height: 590px;
 }
 
 .w-14 {
@@ -773,6 +826,10 @@ video {
   padding-right: 8rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .font-\[\'Ubuntu\'\] {
   font-family: 'Ubuntu';
 }
@@ -827,6 +884,14 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 body {
@@ -895,14 +960,4 @@ body {
   content: var(--tw-content);
   padding-top: .04em;
   padding-bottom: .04em;
-}
-
-.hover\:border-primary-purplish-blue:hover {
-  --tw-border-opacity: 1;
-  border-color: hsl(243 100% 62% / var(--tw-border-opacity));
-}
-
-.hover\:bg-neutral-magnolia:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
 }

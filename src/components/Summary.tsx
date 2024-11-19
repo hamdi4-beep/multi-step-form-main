@@ -1,7 +1,25 @@
+import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
+import Success from './Success'
+
 function Summary() {
+    const [isConfirmed, setIsConfirmed] = React.useState(false)
     const location = useLocation()
+
+    if (!location.state) return (
+        <div className="content">
+            <h1>You aren't supposed to be here!</h1>
+            <Link to='/'>Go Home</Link>
+        </div>
+    )
+
+    if (isConfirmed) return (
+        <div className="content grid place-content-center">
+            <Success />
+        </div>
+    )
+
     const {subscription, plan, filteredAddOns} = location.state
 
     const selectedAddOns = filteredAddOns as {
@@ -12,9 +30,7 @@ function Summary() {
         }
     }[]
 
-    const timeframe = subscription === 'mo' ? 'month' : 'year'
-
-    const sum = filteredAddOns.reduce((prev: any, curr: any) => prev + curr.price[subscription], 0) + plan.price[subscription]
+    const sum = filteredAddOns?.reduce((prev: any, curr: any) => prev + curr?.price[subscription], 0) + plan?.price[subscription]
 
     return (
         <div className="content">
@@ -31,7 +47,7 @@ function Summary() {
                     <span className="font-bold text-primary-marine-blue">${plan.price[subscription]}/{subscription}</span>
                 </div>
 
-                {selectedAddOns.map((addon, i) => (
+                {selectedAddOns?.map((addon, i) => (
                     <div className="flex justify-between pb-4 text-neutral-cool-gray" key={i}>
                         <p>{addon?.title}</p>
                         <span className="text-black">+${addon.price[subscription]}/{subscription}</span>
@@ -40,7 +56,7 @@ function Summary() {
             </div>
 
             <div className="flex justify-between align-center px-4 mt-7">
-                <p className="text-sm">Total (per {timeframe})</p>
+                <p className="text-sm">Total (per {subscription === 'mo' ? 'month' : 'year'})</p>
                 <h3 className="font-bold text-primary-marine-blue text-xl">+${sum}/{subscription}</h3>
             </div>
 
@@ -49,9 +65,7 @@ function Summary() {
                     <Link to='/add-ons' state={location.state}>Go Back</Link>
                 </button>
 
-                <button className="primary-btn">
-                    <Link to='/'>Confirm</Link>
-                </button>
+                <button className="primary-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
         </div>
     )

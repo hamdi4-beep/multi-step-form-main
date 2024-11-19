@@ -12,7 +12,7 @@ function AddOns() {
     const filteredAddOns = addons.map(addon => {
         const [filteredAddOn] = selectedAddOns.filter(it => addon.title === it)
         if (filteredAddOn) return addon
-    })
+    }).filter(Boolean)
 
     const subscription = location.state['subscription'] ?? 'mo'
 
