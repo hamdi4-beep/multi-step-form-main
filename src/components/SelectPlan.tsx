@@ -45,7 +45,7 @@ function SelectPlan() {
                 <button className="primary-btn">
                     <Link to={currentPlan === '' ? '#' : '/add-ons'} onClick={() => currentPlan === '' ? alert('Please select a plan!') : null} state={{
                         ...location.state,
-                        plan: plans.find(it => it.title === currentPlan),
+                        currentPlanIndex: plans.findIndex(it => it.title === currentPlan),
                         subscription
                     }}>Next Step</Link>
                 </button>

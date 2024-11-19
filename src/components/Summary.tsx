@@ -5,8 +5,16 @@ import Success from './Success'
 import { plans } from '../data'
 
 function Summary() {
-    const location = useLocation()
     const [isConfirmed, setIsConfirmed] = React.useState(false)
+    const [currentIndex, setCurrentIndex] = React.useState(0)
+    const location = useLocation()
+
+    React.useEffect(() => {
+        if (location.state) {
+            const { currentPlanIndex } = location.state
+            setCurrentIndex(currentPlanIndex)
+        }
+    }, [])
 
     if (!location.state) return (
         <div className="content">
@@ -21,8 +29,7 @@ function Summary() {
         </div>
     )
 
-    const {subscription, plan, filteredAddOns} = location.state
-    const [currentIndex, setCurrentIndex] = React.useState(plans.findIndex(it => it.title === plan.title))
+    const {subscription, filteredAddOns} = location.state
 
     const selectedAddOns = filteredAddOns as {
         title: string
