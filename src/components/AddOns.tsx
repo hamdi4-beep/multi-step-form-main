@@ -2,10 +2,13 @@ import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
 import { addons } from '../data'
+import { NotFound } from './NotFound'
 
 function AddOns() {
     const [selectedAddOns, setSelectedAddOns] = React.useState<string[]>([])
     const location = useLocation()
+
+    if (!location.state) return <NotFound />
 
     const selectAddOn = (addonTitle: string) => setSelectedAddOns(!filteredAddOns.find(it => it?.title === addonTitle) ? [...selectedAddOns, addonTitle] : selectedAddOns.filter(it => it !== addonTitle))
 

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
 import { plans } from '../data'
+import { NotFound } from './NotFound'
 
 function SelectPlan() {
     const [currentPlan, setCurrentPlan] = React.useState('')
@@ -13,6 +14,8 @@ function SelectPlan() {
         after:block after:bg-white after:rounded-full after:py-[.04em] after:px-[.6em] after:w-4 after:h-5
         bg-primary-marine-blue p-1 rounded-full w-14
     `
+
+    if (!location.state) return <NotFound />
 
     return (
         <div className="content">
