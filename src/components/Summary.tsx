@@ -2,10 +2,11 @@ import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
 import Success from './Success'
+import { plans } from '../data'
 
 function Summary() {
-    const [isConfirmed, setIsConfirmed] = React.useState(false)
     const location = useLocation()
+    const [isConfirmed, setIsConfirmed] = React.useState(false)
 
     if (!location.state) return (
         <div className="content">
@@ -21,6 +22,7 @@ function Summary() {
     )
 
     const {subscription, plan, filteredAddOns} = location.state
+    const [currentIndex, setCurrentIndex] = React.useState(plans.findIndex(it => it.title === plan.title))
 
     const selectedAddOns = filteredAddOns as {
         title: string
@@ -30,7 +32,14 @@ function Summary() {
         }
     }[]
 
-    const sum = filteredAddOns?.reduce((prev: any, curr: any) => prev + curr?.price[subscription], 0) + plan?.price[subscription]
+    const selectedPlan = plans[currentIndex]
+
+    const sum = filteredAddOns?.reduce((prev: any, curr: any) => prev + curr.price[subscription], 0) + selectedPlan.price[subscription]
+
+    const handleChangePlan = () => {
+        setCurrentIndex(currentIndex < (plans.length - 1) ? currentIndex + 1 : 0)
+        console.log(currentIndex)
+    }
 
     return (
         <div className="content">
@@ -40,11 +49,11 @@ function Summary() {
             <div className="bg-[#eee] p-4 rounded-md mt-8">
                 <div className="flex justify-between items-center border-b border-white mb-4 pb-4">
                     <div>
-                        <h3 className="font-bold text-primary-marine-blue">{plan.title} ({subscription === 'mo' ? 'Monthly' : 'Yearly'})</h3>
-                        <span className="text-sm underline text-neutral-cool-gray">Change</span>
+                        <h3 className="font-bold text-primary-marine-blue">{selectedPlan.title} ({subscription === 'mo' ? 'Monthly' : 'Yearly'})</h3>
+                        <button onClick={handleChangePlan} className="text-sm underline text-neutral-cool-gray">Change</button>
                     </div>
 
-                    <span className="font-bold text-primary-marine-blue">${plan.price[subscription]}/{subscription}</span>
+                    <span className="font-bold text-primary-marine-blue">${selectedPlan.price[subscription]}/{subscription}</span>
                 </div>
 
                 {selectedAddOns?.map((addon, i) => (
