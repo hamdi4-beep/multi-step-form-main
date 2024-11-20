@@ -1,13 +1,17 @@
 import * as React from 'react'
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { plans } from '../data'
 import { NotFound } from './NotFound'
 
 function SelectPlan() {
     const [currentPlan, setCurrentPlan] = React.useState('')
-    const [subscription, setSubscription] = React.useState('mo')
+    const navigate = useNavigate()
     const location = useLocation()
+
+    if (!location.state) return <NotFound />
+
+    const subscription = location.state['subscription'] ?? 'mo'
 
     const togglerStyle = `
         ${subscription === 'yr' ? 'toggled' : ''}
@@ -15,7 +19,16 @@ function SelectPlan() {
         bg-primary-marine-blue p-1 rounded-full w-14
     `
 
-    if (!location.state) return <NotFound />
+    const handleClick = () => {
+        const options = {
+            state: {
+                ...location.state,
+                subscription: subscription === 'mo' ? 'yr' : 'mo'
+            }
+        }
+
+        navigate('#', options)
+    }
 
     return (
         <div className="content">
@@ -36,7 +49,7 @@ function SelectPlan() {
 
             <div className="bg-[#eee] p-2 flex gap-4 justify-center mt-8 items-center rounded-md">
                 <span className={`${subscription === 'yr' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Monthly</span>
-                <div onClick={() => setSubscription(prev => prev === 'yr' ? 'mo' : 'yr')} className={togglerStyle}></div>
+                <div onClick={handleClick} className={togglerStyle}></div>
                 <span className={`${subscription === 'mo' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Yearly</span>
             </div>
 
