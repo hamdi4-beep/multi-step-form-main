@@ -1,4 +1,4 @@
-import AsideBar from "./components/AsideBar"
+import SideBar from "./components/SideBar"
 import { Outlet, useLocation } from "react-router-dom"
 
 const paths = {
@@ -15,9 +15,12 @@ function App() {
 
   return (
     <div className="App font-['Ubuntu'] grid place-content-center h-screen">
-      <div className="bg-white w-[1024px] p-4 pr-0 flex rounded-lg">
-        <AsideBar currentIndex={paths[location.pathname]} />
-        <Outlet />
+      <div className="bg-white flex w-[1024px] p-4 pr-0 rounded-lg">
+        <SideBar currentIndex={paths[location.pathname]} />
+        
+        <div className="px-16 pt-8 w-full outline">
+          <Outlet />
+        </div>
       </div>
     </div>
   )

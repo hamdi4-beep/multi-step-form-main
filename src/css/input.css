@@ -12,7 +12,6 @@ body {
     background-position: 100% bottom;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    overflow: hidden;
 }
 
 .active {
@@ -42,7 +41,7 @@ body {
     }
 
     .content {
-        @apply px-16 pt-8 w-full;
+        @apply px-16 pt-8 w-full outline;
     }
 
     .selected-plan {

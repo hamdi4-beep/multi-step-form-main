@@ -17,10 +17,10 @@ function AddOns() {
         if (filteredAddOn) return addon
     }).filter(Boolean)
 
-    const subscription = location.state['subscription'] ?? 'mo'
+    const subscription = location.state['subscription']
 
     return (
-        <div className="content">
+        <section>
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Pick add-ons</h2>
             <p className="text-neutral-cool-gray">Add-ons enhance your gaming experience.</p>
 
@@ -55,7 +55,7 @@ function AddOns() {
                     }}>Next Step</Link>
                 </button>
             </div>
-        </div>
+        </section>
     )
 }
 

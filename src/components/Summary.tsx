@@ -17,7 +17,7 @@ function Summary() {
     }, [])
 
     if (!location.state) return (
-        <div className="content">
+        <div>
             <h1>Please follow the steps! No peaking ahead ;)</h1>
             <Link to='/'>Go Home</Link>
         </div>
@@ -45,7 +45,7 @@ function Summary() {
     }
 
     return (
-        <div className="content">
+        <section>
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Finishing up</h2>
             <p className="text-neutral-cool-gray">Double-check everything looks OK before confirming.</p>
 
@@ -79,7 +79,7 @@ function Summary() {
 
                 <button className="primary-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
-        </div>
+        </section>
     )
 }
 

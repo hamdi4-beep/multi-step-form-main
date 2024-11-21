@@ -31,7 +31,7 @@ const FormComponent = () => {
 
 function FormSection() {
     return (
-        <section className="content">
+        <section>
           <h2 className="text-primary-marine-blue font-bold text-3xl">Personal info</h2>
           <p className="text-neutral-cool-gray">Please provide your name, email address, and phone number.</p>
           <FormComponent />

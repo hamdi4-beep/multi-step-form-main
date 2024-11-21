@@ -31,7 +31,7 @@ function SelectPlan() {
     }
 
     return (
-        <div className="content">
+        <section>
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Select your plan</h2>
             <p className="text-neutral-cool-gray">You have the option of monthly or yearly billing.</p>
 
@@ -66,7 +66,7 @@ function SelectPlan() {
                     }}>Next Step</Link>
                 </button>
             </div>
-        </div>
+        </section>
     )
 }
 

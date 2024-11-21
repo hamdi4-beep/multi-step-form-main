@@ -5,13 +5,15 @@ const list = [
     'Summary'
 ]
 
-function AsideBar({
+const sideBarHeight = 'h-[500px]'
+
+function SideBar({
     currentIndex
 }: {
     currentIndex: number
 }) {
     return (
-        <div className="left p-6 pr-32 flex-shrink-0 h-[590px]">
+        <div className={`left p-6 pr-32 flex-shrink-0 ${sideBarHeight}`}>
           {list.map((title, i) => {
             const index = list.indexOf(title) + 1
 
@@ -29,4 +31,4 @@ function AsideBar({
     )
 }
 
-export default AsideBar
+export default SideBar

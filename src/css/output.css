@@ -589,6 +589,7 @@ video {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-top: 2rem;
+  outline-style: solid;
 }
 
 .selected-plan {
@@ -611,8 +612,16 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .ml-auto {
@@ -621,6 +630,10 @@ video {
 
 .mr-32 {
   margin-right: 8rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mt-32 {
@@ -639,22 +652,6 @@ video {
   margin-top: 2rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-32 {
-  margin-bottom: 8rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
 .block {
   display: block;
 }
@@ -667,40 +664,12 @@ video {
   display: grid;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-\[1024px\] {
-  height: 1024px;
-}
-
-.h-\[768px\] {
-  height: 768px;
-}
-
-.h-\[425px\] {
-  height: 425px;
-}
-
 .h-\[500px\] {
   height: 500px;
 }
 
-.h-\[600px\] {
-  height: 600px;
-}
-
-.h-\[550px\] {
-  height: 550px;
-}
-
-.h-\[580px\] {
-  height: 580px;
-}
-
-.h-\[590px\] {
-  height: 590px;
+.h-screen {
+  height: 100vh;
 }
 
 .w-14 {
@@ -810,6 +779,11 @@ video {
   padding-bottom: .4em;
 }
 
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -824,6 +798,10 @@ video {
 
 .pr-32 {
   padding-right: 8rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-center {
@@ -904,7 +882,6 @@ body {
   background-position: 100% bottom;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  overflow: hidden;
 }
 
 .active {
