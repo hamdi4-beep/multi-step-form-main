@@ -7,45 +7,23 @@ body {
 }
 
 .side-bar {
-    background-image: url('../../assets/bg-sidebar-desktop.svg');
+    background-image: url('../../assets/bg-sidebar-mobile.svg');
     background-size: cover;
     background-position: 100% bottom;
 }
 
-.active {
-    background-color: white;
-    color: black;
-    border: none;
-}
-
-.toggled::after {
-    margin-left: auto;
-}
-
 @layer base {
-    .step {
-        display: flex;
-        align-items: center;
-        margin-top: 1em;
-    }
-
-    .field {
-        @apply border p-2 px-4 rounded-md block my-2 mb-4 w-full;
-    }
-
     .primary-btn {
         @apply bg-primary-marine-blue p-2 px-5 text-white rounded-md;
     }
-
-    
 
     .selected-plan {
         @apply border-primary-purplish-blue bg-neutral-magnolia;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
     .side-bar {
-        background-image: url('../../assets/bg-sidebar-mobile.svg');
+        background-image: url('../../assets/bg-sidebar-desktop.svg');
     }
 }
