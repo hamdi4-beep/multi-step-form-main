@@ -43,7 +43,7 @@ function AddOns() {
                 })}
             </div>
 
-            <div className="flex justify-between items-center mt-32">
+            <div className="">
                 <button className="text-neutral-cool-gray">
                     <Link to='/select-plan' state={location.state}>Go Back</Link>
                 </button>

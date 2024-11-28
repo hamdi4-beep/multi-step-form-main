@@ -5,7 +5,7 @@ const list = [
     'Summary'
 ]
 
-const sideBarHeight = 'h-[500px]'
+const sideBarHeight = 'h-[600px]'
 
 function SideBar({
     currentIndex
@@ -13,7 +13,7 @@ function SideBar({
     currentIndex: number
 }) {
     return (
-        <div className={`left p-6 pr-32 flex-shrink-0 ${sideBarHeight}`}>
+        <div className={`side-bar rounded-lg`}>
           {list.map((title, i) => {
             const index = list.indexOf(title) + 1
 
@@ -21,7 +21,7 @@ function SideBar({
                 <div className="step" key={i}>
                     <span className={`py-[.4em] px-[.8em] rounded-full border text-white ${index === currentIndex ? 'active' : ''}`}>{index}</span>
 
-                    <div>
+                    <div className="step-information hidden md:block">
                         <span className="text-neutral-light-gray font-light">STEP {index}</span>
                         <h2 className=" text-white">{title.toUpperCase()}</h2>
                     </div>

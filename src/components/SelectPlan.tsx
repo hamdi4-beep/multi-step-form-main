@@ -47,13 +47,13 @@ function SelectPlan() {
                 })}
             </div>
 
-            <div className="bg-[#eee] p-2 flex gap-4 justify-center mt-8 items-center rounded-md">
+            <div className="bg-[#eee] p-2 gap-4 mt-8 items-center rounded-md">
                 <span className={`${subscription === 'yr' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Monthly</span>
                 <div onClick={handleClick} className={togglerStyle}></div>
                 <span className={`${subscription === 'mo' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Yearly</span>
             </div>
 
-            <div className="flex justify-between items-center mt-32">
+            <div className="">
                 <button className="text-neutral-cool-gray">
                     <Link to='..'>Go Back</Link>
                 </button>

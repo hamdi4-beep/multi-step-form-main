@@ -6,12 +6,10 @@ body {
     background-color: #eee;
 }
 
-.left {
+.side-bar {
     background-image: url('../../assets/bg-sidebar-desktop.svg');
     background-size: cover;
     background-position: 100% bottom;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 .active {
@@ -28,8 +26,7 @@ body {
     .step {
         display: flex;
         align-items: center;
-        gap: 1em;
-        margin-bottom: 2em;
+        margin-top: 1em;
     }
 
     .field {
@@ -40,11 +37,15 @@ body {
         @apply bg-primary-marine-blue p-2 px-5 text-white rounded-md;
     }
 
-    .content {
-        @apply px-16 pt-8 w-full outline;
-    }
+    
 
     .selected-plan {
         @apply border-primary-purplish-blue bg-neutral-magnolia;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .side-bar {
+        background-image: url('../../assets/bg-sidebar-mobile.svg');
     }
 }

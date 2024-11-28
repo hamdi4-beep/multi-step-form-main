@@ -14,12 +14,14 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="App font-['Ubuntu'] grid place-content-center h-screen">
-      <div className="bg-white flex w-[1024px] p-4 pr-0 rounded-lg">
+    <div className="App font-['Ubuntu']">
+      <div className="w-full bg-white md:rounded-lg overflow-hidden">
         <SideBar currentIndex={paths[location.pathname]} />
         
-        <div className="px-16 pt-8 w-full outline">
-          <Outlet />
+        <div className="">
+          <div className="w-full bg-white relative">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
