@@ -50,18 +50,18 @@ function SelectPlan() {
                 })}
             </div>
 
-            <div className="bg-[#eee] p-2 gap-4 mt-8 items-center rounded-md">
+            <div className="bg-[#eee] p-2 gap-4 mt-8 flex justify-center items-center rounded-md">
                 <span className={`${subscription === 'yr' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Monthly</span>
                 <div onClick={handleClick} className={togglerStyle}></div>
                 <span className={`${subscription === 'mo' ? 'text-neutral-cool-gray' : 'text-primary-marine-blue font-bold'}`}>Yearly</span>
             </div>
 
-            <div className="">
+            <div className="mt-8 ml-auto flex justify-end">
                 <button className="text-neutral-cool-gray">
                     <Link to='..'>Go Back</Link>
                 </button>
 
-                <button className="primary-btn">
+                <button className="primary-btn ml-4">
                     <Link to={currentPlan === '' ? '#' : '/add-ons'} onClick={() => currentPlan === '' ? alert('Please select a plan!') : null} state={{
                         ...location.state,
                         currentPlanIndex: plans.findIndex(it => it.title === currentPlan),
