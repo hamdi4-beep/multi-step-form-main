@@ -35,13 +35,16 @@ function SelectPlan() {
             <h2 className="text-primary-marine-blue font-bold text-3xl mb-2">Select your plan</h2>
             <p className="text-neutral-cool-gray">You have the option of monthly or yearly billing.</p>
 
-            <div className="flex gap-4">
+            <div className="mt-8 gap-2">
                 {plans.map((plan, i) => {
                     return (
-                        <div onClick={() => setCurrentPlan(plan.title)} className={`${currentPlan === plan.title ? 'selected-plan' : ''} w-full mt-8 p-4 pr-16 border rounded-md hover:selected-plan`} key={i}>
-                            <img src={plan.src} className='mb-10' alt="" />
-                            <h3 className="font-bold text-primary-marine-blue">{plan.title}</h3>
-                            <p className="text-neutral-cool-gray">${plan.price[subscription]}/{subscription}</p>
+                        <div onClick={() => setCurrentPlan(plan.title)} className={`${currentPlan === plan.title ? 'selected-plan' : ''} flex items-center gap-4 w-full mt-3 p-4 border rounded-md hover:selected-plan`} key={i}>
+                            <img src={plan.src} alt="" />
+                            
+                            <div>
+                                <h3 className="font-bold text-primary-marine-blue">{plan.title}</h3>
+                                <p className="text-neutral-cool-gray">${plan.price[subscription]}/{subscription}</p>
+                            </div>
                         </div>
                     )
                 })}
