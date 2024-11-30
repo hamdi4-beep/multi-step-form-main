@@ -18,8 +18,8 @@ function App() {
       <div className="w-full bg-white md:rounded-lg overflow-hidden">
         <SideBar currentIndex={paths[location.pathname]} />
         
-        <div className="bg-[#eee] px-8">
-          <div className="w-full bg-neutral-white relative -top-24 rounded-lg px-8 py-10">
+        <div className="bg-[#eee] px-8 relative">
+          <div className="content-container w-full bg-neutral-white rounded-lg px-8 py-10">
             <Outlet />
           </div>
         </div>

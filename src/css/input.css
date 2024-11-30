@@ -12,6 +12,10 @@ body {
     background-position: 100% bottom;
 }
 
+.content-container {
+    transform: translateY(-6em)
+}
+
 @layer base {
     .primary-btn {
         @apply bg-primary-marine-blue p-2 px-5 text-white rounded-md;

@@ -26,7 +26,7 @@ const FormComponent = () => {
             <input type="email" name="email" placeholder="e.g. stephenking@lorem.com" className={fieldStyle} required />
             <label htmlFor="phone" className="font-light">Phone Number</label>
             <input type="text" name="phone" placeholder="e.g. +1 234 567 890" className={fieldStyle} required />
-            <button className="primary-btn absolute bottom-0 right-8">Next Step</button>
+            <button type="submit" className="primary-btn ml-auto block">Next Step</button>
         </form>
     )
 }
