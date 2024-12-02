@@ -14,8 +14,8 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="App font-['Ubuntu']">
-      <div className="md:flex w-full max-w-3xl md:rounded-lg overflow-hidden md:p-4 md:bg-white">
+    <div className="App font-['Ubuntu'] pt-4">
+      <div className="md:flex w-full max-w-3xl md:rounded-lg overflow-hidden md:p-4 md:bg-white mx-auto">
         <SideBar currentIndex={paths[location.pathname]} />
         
         <div className="px-8 md:px-0">
