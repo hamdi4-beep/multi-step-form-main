@@ -15,11 +15,11 @@ function App() {
 
   return (
     <div className="App font-['Ubuntu']">
-      <div className="w-full bg-white md:rounded-lg overflow-hidden">
+      <div className="md:flex w-full max-w-3xl md:rounded-lg overflow-hidden md:p-4 md:bg-white">
         <SideBar currentIndex={paths[location.pathname]} />
         
-        <div className="bg-[#eee] px-8 relative">
-          <div className="content-container w-full bg-neutral-white rounded-lg px-8 py-10">
+        <div className="px-8 md:px-0">
+          <div className="content-container md:transform-none w-full bg-neutral-white rounded-lg px-8 py-10">
             <Outlet />
           </div>
         </div>
