@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
-import { addons } from '../data'
+import { addons } from '../data/data'
 import { NotFound } from './NotFound'
 
 function AddOns() {

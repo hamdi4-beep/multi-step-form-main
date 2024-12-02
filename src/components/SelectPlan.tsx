@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
-import { plans } from '../data'
+import { plans } from '../data/data'
 import { NotFound } from './NotFound'
 
 function SelectPlan() {

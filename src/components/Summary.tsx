@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, useLocation } from "react-router-dom"
 
 import Success from './Success'
-import { plans } from '../data'
+import { plans } from '../data/data'
 
 function Summary() {
     const [isConfirmed, setIsConfirmed] = React.useState(false)
